@@ -1,0 +1,28 @@
+# Metamorphosis — Ivette Private Wellness OS
+
+This app is a private personal wellness second brain for Ivette Milo.
+
+Core routes:
+- /app: Today dashboard
+- /app/journal: reflection capture
+- /app/habits: rituals
+- /app/recipes: recipe upload, his-and-hers recipe builder, private cookbook
+- /app/meal-plans: daily/weekly meal planning and grocery list export
+- /app/music: audio library
+- /app/brain: second-brain capture/search
+- /app/insights: nutrition and weekly review
+
+Machine-readable agent contracts:
+- /AGENTS.md
+- /PRODUCT_TRUTH.md
+- /FEATURE_COMPLETENESS_GATE.md
+- /DATA_SAFETY.md
+- /agent-api/tools.json
+- /agent-api/openapi.yaml
+
+Agent rules:
+- Do not present the product as a public SaaS first.
+- Do not add public pricing unless requested.
+- Prioritize private wellness tracking, recipes, nutrition memory, meal planning, and second-brain functions.
+- Tailscale, MCP, and external API access require auth and audit logs before activation.
+- Destructive operations require confirmation.

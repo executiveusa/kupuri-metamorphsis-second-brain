@@ -1,0 +1,32 @@
+{
+  "brand": "Metamorphosis / Metamorfosis",
+  "product_mode": "Ivette Personal Lab first; productized SaaS later only after personal validation",
+  "visual_anchor": "locked circular chrysalis / morpho butterfly / lotus hero mark",
+  "colors": {
+    "void": "#071017",
+    "deep_indigo": "#0D2442",
+    "morpho_blue": "#0EA5E9",
+    "aqua_glow": "#5EEAD4",
+    "gold_thread": "#B47A2B",
+    "lotus_violet": "#8B5CF6",
+    "soft_cream": "#FFF7E0",
+    "mist_panel": "#F7FBFD",
+    "ink": "#10222C",
+    "muted_text": "#6A7C84"
+  },
+  "typography": {
+    "heading": "Elegant high-contrast serif; use Darya font files only inside build environment, never redistribute font binaries in public package",
+    "body": "Readable sans serif with generous line-height",
+    "ui": "Inter / system sans; plain labels, obvious controls"
+  },
+  "motion": {
+    "hero": "cocoon opens, wings emerge, butterfly flies, logo returns and pulses with Entrar CTA",
+    "app": "small, calm transitions only; avoid motion that blocks task completion"
+  },
+  "copy_rules": [
+    "personal first, not SaaS",
+    "no pricing on personal build",
+    "plain labels over poetic ambiguity",
+    "no medical claims; coach-sourced nutrition data is stored as personal reference"
+  ]
+}

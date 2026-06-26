@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  :root {
+    --glass-surface: rgba(11, 15, 18, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-highlight: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    :root {
+      --glass-surface: rgba(11, 15, 18, 0.92);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --glass-highlight: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-[color:var(--glass-border)] bg-[color:var(--glass-surface)] shadow-[var(--glass-shadow)] backdrop-blur-xl;
+  }
+
+  .glass-panel--highlight {
+    @apply rounded-3xl border border-[color:var(--glass-highlight)] bg-[color:var(--glass-surface)]/85 shadow-[var(--glass-shadow)] backdrop-blur-xl;
+  }
+
+  .skip-to-content {
+    @apply absolute left-4 top-4 -translate-y-20 rounded-full bg-[#57B8BF] px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg transition focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#0B0F12] focus:ring-[#57B8BF];
+  }
+}

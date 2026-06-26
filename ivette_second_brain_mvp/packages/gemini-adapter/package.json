@@ -1,0 +1,174 @@
+{
+  "name": "gemini-adapter",
+  "version": "1.0.0",
+  "description": "Gemini CLI platform integration for Ivette's Second Brain, handling MCP bridge, staged execution, and ICM workflow coordination",
+  "author": "Kupuri Media™ × Akash Engine",
+  "license": "MIT",
+  "targets": [
+    {
+      "platform": "gemini-cli",
+      "version": "1.0.0+",
+      "commands": {
+        "setup": "gemini-cli init -o ./gemini-workspace",
+        "mcp-install": "gemini-cli mcp install @kupurimedia/synthia-mcp --scope user",
+        "orchestration": "gemini-cli mcp proxy --config ./config.json",
+        "version-check": "gemini-cli --version || true"
+      },
+      "files": [
+        "GEMINI.md",
+        "package.json",
+        "src/orchestrator.ts",
+        "scripts/initialize.sh"
+      ],
+      "orchestration": {
+        "type": "icm-native",
+        "orchestrator": "gemini-orchestrator",
+        "orchestration_pattern": "stage-by-stage",
+        "integration_depth": "deep"
+      },
+      "integration_features": [
+        {
+          "name": "Stage-aware MCP",
+          "description": "Dynamically loads tools based on the current ICM stage",
+          "implementation": "Context-aware MCP tool registration",
+          "dependencies": ["synthesia-mcp", "icm-context-loader"]
+        },
+        {
+          "name": "Backward Reasoning Engine",
+          "description": "Traces outputs back to sources through the orchestration chain",
+          "implementation": "Graph-based provenance tracking with ICM context",
+          "dependencies": ["synthesia-graph-traversal"]
+        },
+        {
+          "name": "Execution Coordination",
+          "description": "Manages stage-by-stage execution with human review gates",
+          "implementation": "Hierarchical session management",
+          "dependencies": ["stage-controller", "review-gates"]
+        },
+        {
+          "name": "Tool Orchestration",
+          "description": "Provides dynamic tool selection based on the current ICM stage requirements",
+          "implementation": "ICM-context-driven tool loading",
+          "dependencies": ["stage-context-manager", "synthesia-input-manager"]
+        },
+        {
+          "name": "State Management",
+          "description": "Maintains session state across ICM stages and tool invocations",
+          "implementation": "Persistent state with stage context awareness",
+          "dependencies": ["state-persistence", "context-awareness"]
+        }
+      ],
+      "compatibility": [
+        {
+          "platform": "gemini-cli",
+          "version": "latest",
+          "compatibility": "high"
+        }
+      ],
+      "requirements": {
+        "node_version": "18.16.0 or higher",
+        "memory": "2GB minimum",
+        "storage": "500MB minimum"
+      },
+      "environment": {
+        "variables": [
+          {
+            "name": "NODE_OPTIONS",
+            "value": "--max-old-space-size=4096"
+          },
+          {
+            "name": "GEMINI_ORCHESTRATION_MODE",
+            "value": "icm-stage-mode"
+          },
+          {
+            "name": "MCPS_SYMMETRY_SYNTHIA",
+            "value": "true"
+          }
+        ]
+      },
+      "persistence": {
+        "workspace": "%USERPROFILE%/.gemini",
+        "configuration": "%USERPROFILE%/.gemini/config.json"
+      },
+      "setup_workflow": {
+        "steps": [
+          {
+            "step": 1,
+            "action": "initializeWorkspace",
+            "description": "Create Gemini CLI workspace in staging folder",
+            "command": "gemini-cli init -o ./staging",
+            "validation": ["workspace_created", "gemini_installed"]
+          },
+          {
+            "step": 2,
+            "action": "installBridge",
+            "description": "Install SYNTHIA™ MCP bridge",
+            "command": "gemini-cli mcp install @kupurimedia/synthia-mcp --scope user",
+            "validation": ["mcp_bridge_installed", "symmetry_configured"]
+          },
+          {
+            "step": 3,
+            "action": "configureSession",
+            "description": "Configure the ICM orchestration session",
+            "command": "gemini-cli init -c ./synthesia-config",
+            "validation": ["session_created", "context_loaded"]
+          }
+        ]
+      },
+      "deployment": {
+        "commands": [
+          "scripts/setup/gemini-cli-installer.sh",
+          "scripts/setup/mcp-bridge-installer.sh"
+        ],
+        "configuration": "gemini-cli/config/cli-01",
+        "service_setup": "gemini-cli --config my-ivette-brain"
+      },
+      "troubleshooting": {
+        "common_issues": [
+          {
+            "issue": "Cannot install MCP bridge",
+            "symptoms": ["Permission denied", "Network timeout", "Package not found"],
+            "solutions": [
+              "Check network connectivity",
+              "Verify Gemini CLI version compatibility",
+              "Try alternative installation method"
+            ]
+          },
+          {
+            "issue": "Session configuration fails",
+            "symptoms": ["Session not created", "Load error", "Configuration incomplete"],
+            "solutions": [
+              "Verify configuration file is not corrupted",
+              "Check workspace permissions",
+              "Try reinitializing the session"
+            ]
+          }
+        ],
+        "debugging": {
+          "advanced_logs": "gemini-cli --verbose",
+          "mcp_logs": "cat ~/.gemini/mcp.log",
+          "session_debug": "cat ~/.gemini/session.log"
+        }
+      }
+    }
+  ],
+  "integration_stack": {
+    "primary_language": "TypeScript",
+    "runtime": "Node.js",
+    "framework": "Gemini CLI WebView",
+    "integration_pattern": "orchestrator-over-adapter",
+    "context_handling": "ICM-stage-aware",
+    "synthia_compatibility": "native"
+  }
+}
+
+---
+*This adaptor implements **ICM native integration** with Gemini CLI, providing complete symbol indexing and orchestration capabilities for Ivette's Second Brain, featuring the full suite of Understand-Anything and My Brain Is Full Crew integration.*
+
+**Key Features:**
+- Seamless Understand-Anything symbol indexing integration
+- My Brain Is Full Crew multi-agent orchestration
+- ICM staged workflow coordination
+- Gemini CLI native compatibility
+
+**Usage:** Initialize with `gemini-cli init -o ./my-ivette-brain`

@@ -1,0 +1,114 @@
+openapi: 3.1.0
+info:
+  title: Metamorphosis Ivette Private Lab Agent API
+  version: 0.2.0
+  description: Private agent API contract for Ivette's wellness second brain.
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/journal:
+    get:
+      summary: List journal entries
+      responses:
+        '200':
+          description: Journal collection
+    post:
+      summary: Create journal entry
+      responses:
+        '201':
+          description: Stored journal entry
+  /api/habits:
+    get:
+      summary: List habits
+      responses:
+        '200':
+          description: Habit collection
+    post:
+      summary: Create or update habit
+      responses:
+        '201':
+          description: Stored habit
+  /api/recipes:
+    get:
+      summary: List recipes
+      responses:
+        '200':
+          description: Recipe collection
+    post:
+      summary: Create or upload recipe
+      responses:
+        '201':
+          description: Stored recipe
+  /api/meal-plans:
+    get:
+      summary: List meal plans
+      responses:
+        '200':
+          description: Meal plan collection
+    post:
+      summary: Create meal plan
+      responses:
+        '201':
+          description: Stored meal plan
+  /api/brain:
+    get:
+      summary: Search brain memory
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Search results
+    post:
+      summary: Save brain memory entry
+      responses:
+        '201':
+          description: Stored brain memory entry
+components:
+  schemas:
+    Recipe:
+      type: object
+      required: [title, mode, meal]
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        mode:
+          type: string
+          enum: [hers, his, both]
+        meal:
+          type: string
+          enum: [breakfast, snack, lunch, dinner]
+        protein:
+          type: number
+        carbs:
+          type: number
+        fat:
+          type: number
+        calories:
+          type: number
+        ingredients:
+          type: array
+          items:
+            type: string
+        steps:
+          type: array
+          items:
+            type: string
+    MealPlan:
+      type: object
+      required: [title, days]
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        focus:
+          type: string
+        days:
+          type: array
+          items:
+            type: object

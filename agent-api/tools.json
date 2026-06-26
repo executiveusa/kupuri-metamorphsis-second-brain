@@ -1,0 +1,62 @@
+{
+  "product": "Metamorphosis Ivette Private Lab",
+  "version": "0.2.0",
+  "tools": [
+    {
+      "name": "create_journal_entry",
+      "description": "Capture a private reflection for Ivette.",
+      "risk": "personal_data_write"
+    },
+    {
+      "name": "search_memory",
+      "description": "Search local second-brain entries, recipes, habits, and meal plans.",
+      "risk": "personal_data_read"
+    },
+    {
+      "name": "create_recipe",
+      "description": "Create a his, hers, or shared recipe with macros and instructions.",
+      "risk": "personal_data_write"
+    },
+    {
+      "name": "upload_recipes",
+      "description": "Import recipes from JSON, text, CSV-like paste, or local file into the recipe memory.",
+      "risk": "personal_data_write"
+    },
+    {
+      "name": "create_meal_plan",
+      "description": "Create a daily or weekly meal plan from saved recipes and Ivette's macro targets.",
+      "risk": "personal_data_write"
+    },
+    {
+      "name": "generate_grocery_list",
+      "description": "Aggregate ingredients from selected recipes or a saved meal plan.",
+      "risk": "personal_data_read"
+    },
+    {
+      "name": "log_habit",
+      "description": "Create or update a wellness habit or ritual.",
+      "risk": "personal_data_write"
+    },
+    {
+      "name": "complete_ritual",
+      "description": "Mark a ritual complete and update streak state.",
+      "risk": "personal_data_write"
+    },
+    {
+      "name": "save_audio_track",
+      "description": "Save music or audio used for mood/state regulation.",
+      "risk": "personal_data_write"
+    },
+    {
+      "name": "summarize_week",
+      "description": "Summarize journal, habits, recipes, meals, and brain notes into a weekly private review.",
+      "risk": "personal_data_read"
+    }
+  ],
+  "safety": {
+    "delete_requires_confirmation": true,
+    "private_by_default": true,
+    "public_sharing_disabled_in_mvp": true,
+    "journal_analytics_disabled": true
+  }
+}

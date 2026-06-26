@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "Metamorfosis Wellness Journey",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Queue Journal Entry",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"uid\": \"demo\",\n  \"content\": \"Offline gratitude\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/journal",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "journal"]
+        }
+      }
+    }
+  ]
+}
