@@ -13,7 +13,7 @@ export function MealPlanWorkspace() {
   const { items: plans, upsert, remove } = useLocalCollection<MealPlan>("metamorphosis.mealPlans", mealPlanSeeds)
   const [title, setTitle] = React.useState("Ivette weekly meal plan")
   const [focus, setFocus] = React.useState("Protein anchor, hydration, fiber, simple prep")
-  const [selectedDay, setSelectedDay] = React.useState(dayNames[0])
+  const [selectedDay, setSelectedDay] = React.useState<string>(dayNames[0]!)
   const [breakfast, setBreakfast] = React.useState("")
   const [snack1, setSnack1] = React.useState("")
   const [lunch, setLunch] = React.useState("")
