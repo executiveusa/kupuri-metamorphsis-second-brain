@@ -13,7 +13,7 @@ export function MusicWorkspace() {
   const [title, setTitle] = React.useState("")
   const [intention, setIntention] = React.useState("")
   const [src, setSrc] = React.useState<string>(trackSeeds[0]!.src)
-  const active = items.find((track) => track.id === activeId) ?? items[0] ?? trackSeeds[0]!
+  const active = (items.find((track) => track.id === activeId) ?? items[0] ?? trackSeeds[0])!
 
   const save = () => {
     if (!title.trim() || !src.trim()) return
