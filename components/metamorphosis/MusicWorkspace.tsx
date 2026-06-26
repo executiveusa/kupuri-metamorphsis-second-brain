@@ -9,10 +9,10 @@ type Track = TrackSeed
 
 export function MusicWorkspace() {
   const { items, upsert, remove } = useLocalCollection<Track>("metamorphosis.tracks", trackSeeds)
-  const [activeId, setActiveId] = React.useState(trackSeeds[0].id)
+  const [activeId, setActiveId] = React.useState<string>(trackSeeds[0]!.id)
   const [title, setTitle] = React.useState("")
   const [intention, setIntention] = React.useState("")
-  const [src, setSrc] = React.useState(trackSeeds[0].src)
+  const [src, setSrc] = React.useState<string>(trackSeeds[0]!.src)
   const active = items.find((track) => track.id === activeId) ?? items[0] ?? trackSeeds[0]
 
   const save = () => {
