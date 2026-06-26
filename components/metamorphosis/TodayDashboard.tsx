@@ -123,9 +123,9 @@ export function TodayDashboard() {
             <Link href="/app/music" className="text-sm font-semibold text-[#38E8FF]">Open</Link>
           </div>
           <div className="mt-4 space-y-3">
-            <p className="rounded-2xl bg-[#071018] p-4 text-sm text-[#D8EAF1]">Next recipe: <span className="font-semibold text-white">{recipeSeeds[0].title}</span></p>
-            <p className="rounded-2xl bg-[#071018] p-4 text-sm text-[#D8EAF1]">Meal plan starter: <span className="font-semibold text-white">{mealPlanSeeds[0].title}</span></p>
-            <p className="rounded-2xl bg-[#071018] p-4 text-sm text-[#D8EAF1]">Next track: <span className="font-semibold text-white">{trackSeeds[0].title}</span></p>
+            <p className="rounded-2xl bg-[#071018] p-4 text-sm text-[#D8EAF1]">Next recipe: <span className="font-semibold text-white">{recipeSeeds[0]!.title}</span></p>
+            <p className="rounded-2xl bg-[#071018] p-4 text-sm text-[#D8EAF1]">Meal plan starter: <span className="font-semibold text-white">{mealPlanSeeds[0]!.title}</span></p>
+            <p className="rounded-2xl bg-[#071018] p-4 text-sm text-[#D8EAF1]">Next track: <span className="font-semibold text-white">{trackSeeds[0]!.title}</span></p>
           </div>
         </article>
       </section>
