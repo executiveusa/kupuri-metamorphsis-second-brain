@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 1
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
+  - package-ecosystem: "npm"
+    directory: "/ivette_second_brain_mvp/packages/claude-code-adapter"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 1
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
+  - package-ecosystem: "npm"
+    directory: "/ivette_second_brain_mvp/packages/gemini-adapter"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 1
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
