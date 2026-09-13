@@ -64,7 +64,7 @@
     "cordova-plugin-bluetooth-serial": "^0.4.7",
     "firebase": "^11.0.2",
     "lodash": "^4.17.21",
-    "next": "15.3.6",
+    "next": "15.5.18",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwind-merge": "^2.6.0",
@@ -130,7 +130,7 @@
     "typescript-eslint": "^8.32.0",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4",
-    "webpack": "5.94.0"
+    "webpack": "5.104.1"
   },
   "engines": {
     "node": ">=20.0.0"
